@@ -40,6 +40,7 @@ while True:
         try:
             IdP = int(input('Id do pedido:'))
             lan.consultar_pedido(IdP)
+            lan._pedido[IdP]._historico.mostrar_historico()
         except:
             print('Informe um numero inteiro')
     elif op == 6:
