@@ -123,6 +123,7 @@ class Lanchonete:
                     p = Pedido(preco, desconto, preco_desconto, cliente)
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
+                    msg = "Hamburguer X-Bacon R$12.00"
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('X_Salada')
@@ -132,6 +133,7 @@ class Lanchonete:
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
+                    msg = "Hamburguer X-Salada R$13.00"
                 elif escolha == 3:
                     print('X_Delicia')
                     preco = desconto = preco_desconto = 0
@@ -139,6 +141,7 @@ class Lanchonete:
                     p = Pedido(preco, desconto, preco_desconto, cliente)
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
+                    msg = "Hamburguer X-Bacon R$14.00"
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('X_Calabresa')
@@ -148,6 +151,8 @@ class Lanchonete:
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
+                    msg = "Hamburguer X-Bacon R$15.00"
+                self._pedido[id]._historico.add(msg)
             elif opc == 2:
                 sinal = 0
                 print(f'HUMMMM! Pizza, Ótima escolha {cliente.nome}')
@@ -172,7 +177,7 @@ class Lanchonete:
                 elif escolha == 3:
                     print('Pizza de Calabresa:')
                     preco = desconto = preco_desconto = 0
-                    valor = 40.00
+                    valor = 45.00
                     p = Pedido(preco, desconto, preco_desconto, cliente)
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
@@ -180,7 +185,7 @@ class Lanchonete:
                 elif escolha == 4:
                     print('Pizza Nordestina:')
                     preco = desconto = preco_desconto = 0
-                    valor = 50.00
+                    valor = 60.00
                     p = Pedido(preco, desconto, preco_desconto, cliente)
                     self._pedido[id] = p
                     self._preco_tot.append(valor)
@@ -488,6 +493,7 @@ class Pedido:
         self._desconto = desconto
         self._preco_desconto = preco_desconto
         self._cliente = cliente
+        self._historico = Historico()
 
     @property
     def preco(self):
@@ -557,7 +563,7 @@ class Administradores(Pessoa):
 
     def autenticacao(self, senha):
         return senha == self._senha
-    
+
     def mostrar_funcionario(self):
         print(f'\n= Administradores =\nNome: {self._nome}\nCpf: {self._cpf}\nData de nascimennto: {self._dt_nasc}\nSalario: {self._salario}')
 
@@ -592,3 +598,24 @@ class SistemaLogin():
         else:
             print('Objeto não é autenticavel!')
             return False
+
+
+class Historico:
+    def __init__(self):
+        self._historico = []
+
+    def mostrar_historico(self):
+        print(len(self._historico))
+        if len(self._historico) != 0:
+            print('= Pedidos =')
+            for h in self._historico:
+                print(h)
+            print()
+        else:
+            print('\nSem Pedidos...\n')
+
+    def add(self, msg):
+        print(len(self._historico))
+        self._historico.append(msg)
+        print(self._historico[0])
+        print(len(self._historico))
