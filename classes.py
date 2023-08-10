@@ -103,6 +103,10 @@ class Lanchonete:
         self._preco_tot.clear()
         cliente = self._clientes[cpf]
         print(f'Id do seu pedido: {id}')
+        preco = desconto = preco_desconto = 0
+        #valor = 12.00
+        p = Pedido(preco, desconto, preco_desconto, cliente)
+        self._pedido[id] = p
         while True:
             # cliente = dc_cliente[cpf]
             print(f'Muito bem {cliente.nome}, Vamos realizar o seu pedido!')
@@ -118,36 +122,41 @@ class Lanchonete:
                 escolha = int(input('Escolha um tipo de Hambuguer:'))
                 if escolha == 1:
                     print('X_Bacon')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 12.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
+                    msg = "Hamburguer X-Bacon R$12.00"
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('X_Salada')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 13.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
+                    msg = "Hamburguer X-Salada R$13.00"
                 elif escolha == 3:
                     print('X_Delicia')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 14.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
+                    msg = "Hamburguer X-Bacon R$14.00"
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('X_Calabresa')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 15.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
+                    msg = "Hamburguer X-Bacon R$15.00"
+                self._pedido[id]._historico.add(msg)
             elif opc == 2:
                 sinal = 0
                 print(f'HUMMMM! Pizza, Ótima escolha {cliente.nome}')
@@ -155,34 +164,34 @@ class Lanchonete:
                 escolha = int(input('Escolha um tipo de Pizza:'))
                 if escolha == 1:
                     print('Pizza Mexicana:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 50.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('Pizza de Frango:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 40.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 3:
                     print('Pizza de Calabresa:')
-                    preco = desconto = preco_desconto = 0
-                    valor = 40.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #preco = desconto = preco_desconto = 0
+                    valor = 45.00
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('Pizza Nordestina:')
-                    preco = desconto = preco_desconto = 0
-                    valor = 50.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #preco = desconto = preco_desconto = 0
+                    valor = 60.00
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
             elif opc == 3:
@@ -192,43 +201,43 @@ class Lanchonete:
                 escolha = int(input('Escolha um tipo de Coxinha:'))
                 if escolha == 1:
                     print('Coxinha de Frango:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 3.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('Coxinha de Frango com Cheddar:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 4.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 3:
                     print('Coxinha de Frango com catupiry:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 4.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('Coxinha de Carne:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 3.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
             elif opc == 4:
                 sinal = 0
                 print(f'HUMMMM! Bomba, Ótima escolha {cliente.nome}')
-                preco = desconto = preco_desconto = 0
+                #preco = desconto = preco_desconto = 0
                 valor = 3.00
-                p = Pedido(preco, desconto, preco_desconto, cliente)
-                self._pedido[id] = p
+                #p = Pedido(preco, desconto, preco_desconto, cliente)
+                #self._pedido[id] = p
                 self._preco_tot.append(valor)
                 print('Pedido realizado!')
             elif opc == 5:
@@ -238,43 +247,43 @@ class Lanchonete:
                 escolha = int(input('Escolha um tipo de Pastel:'))
                 if escolha == 1:
                     print('Pastel de Frango:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 3.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('Pastel de Frango com Cheddar:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 4.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 3:
                     print('Pastel de Frango com catupiry:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 4.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('Pastel de Carne:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 3.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
             elif opc == 6:
                 sinal = 0
                 print(f'HUMMMM! Salsichão, Ótima escolha {cliente.nome}')
-                preco = desconto = preco_desconto = 0
+                #preco = desconto = preco_desconto = 0
                 valor = 3.00
-                p = Pedido(preco, desconto, preco_desconto, cliente)
-                self._pedido[id] = p
+                #p = Pedido(preco, desconto, preco_desconto, cliente)
+                #self._pedido[id] = p
                 self._preco_tot.append(valor)
                 print('Pedido realizado!')
             elif opc == 7:
@@ -284,61 +293,61 @@ class Lanchonete:
                 escolha = int(input('Escolha um tipo de Pastel:'))
                 if escolha == 1:
                     print('Coca cola:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 8.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 2:
                     print('Guaraná:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 8.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 3:
                     print('Fanta laranja:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 8.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
                 elif escolha == 4:
                     print('Fanta uva:')
-                    preco = desconto = preco_desconto = 0
+                    #preco = desconto = preco_desconto = 0
                     valor = 8.00
-                    p = Pedido(preco, desconto, preco_desconto, cliente)
-                    self._pedido[id] = p
+                    #p = Pedido(preco, desconto, preco_desconto, cliente)
+                    #self._pedido[id] = p
                     self._preco_tot.append(valor)
                     print('Pedido realizado!')
             elif opc == 8:
                 sinal = 0
                 print(f'HUMMMM! Água mineral, Ótima escolha {cliente.nome}')
-                preco = desconto = preco_desconto = 0
+                #preco = desconto = preco_desconto = 0
                 valor = 2.00
-                p = Pedido(preco, desconto, preco_desconto, cliente)
-                self._pedido[id] = p
+                #p = Pedido(preco, desconto, preco_desconto, cliente)
+                #self._pedido[id] = p
                 self._preco_tot.append(valor)
                 print('Pedido realizado!')
             elif opc == 9:
                 sinal = 0
                 print(f'HUMMMM! Água de coco, Ótima escolha {cliente.nome}')
-                preco = desconto = preco_desconto = 0
+                #preco = desconto = preco_desconto = 0
                 valor = 4.00
-                p = Pedido(preco, desconto, preco_desconto, cliente)
-                self._pedido[id] = p
+                #p = Pedido(preco, desconto, preco_desconto, cliente)
+                #self._pedido[id] = p
                 self._preco_tot.append(valor)
                 print('Pedido realizado!')
             elif opc == 10:
                 sinal = 0
                 print(f'HUMMMM! Cerveja, Ótima escolha {cliente.nome}')
-                preco = desconto = preco_desconto = 0
+                #preco = desconto = preco_desconto = 0
                 valor = 8.00
-                p = Pedido(preco, desconto, preco_desconto, cliente)
-                self._pedido[id] = p
+                #p = Pedido(preco, desconto, preco_desconto, cliente)
+                #self._pedido[id] = p
                 self._preco_tot.append(valor)
                 print('Pedido realizado!')
             elif opc == 11:
@@ -380,8 +389,9 @@ class Lanchonete:
                 if sinal == 1:
                     print(f'Seu pedido foi o {cont}º da lista')
                     print(f'Obrigado pela preferência! {cliente.nome}')
-                    p = Pedido(retorno, desct, cal_des, cliente)
-                    self._pedido[id] = p
+                    self._pedido[id].preco = retorno
+                    self._pedido[id].desconto = desct
+                    self._pedido[id].preco_desconto = cal_des
                     self._cofre += self._pedido[id].calcular_preco_com_desconto()
                     break
                 else:
@@ -488,6 +498,7 @@ class Pedido:
         self._desconto = desconto
         self._preco_desconto = preco_desconto
         self._cliente = cliente
+        self._historico = Historico()
 
     @property
     def preco(self):
@@ -557,7 +568,7 @@ class Administradores(Pessoa):
 
     def autenticacao(self, senha):
         return senha == self._senha
-    
+
     def mostrar_funcionario(self):
         print(f'\n= Administradores =\nNome: {self._nome}\nCpf: {self._cpf}\nData de nascimennto: {self._dt_nasc}\nSalario: {self._salario}')
 
@@ -592,3 +603,20 @@ class SistemaLogin():
         else:
             print('Objeto não é autenticavel!')
             return False
+
+
+class Historico:
+    def __init__(self):
+        self._historico = []
+
+    def mostrar_historico(self):
+        if len(self._historico) != 0:
+            print('= Pedidos =')
+            for h in self._historico:
+                print(h)
+            print()
+        else:
+            print('\nSem Pedidos...\n')
+
+    def add(self, msg):
+        self._historico.append(msg)
