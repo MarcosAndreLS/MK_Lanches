@@ -12,7 +12,7 @@ lan = Lanchonete()
 
 def menu():
     try:
-        op = int(input('-----------MENU-----------\n1 - cadastrar administrador\n2 - cadastrar Atendente\n3 - cadastrar cliente\n4 - realizar um pedido\n5 - consultar um pedido\n6 - mostrar cofre da lanchonete\n7 - listar funcionarios\n0 - sair\n--------------------------\n'))
+        op = int(input('-----------MENU-----------\n1 - cadastrar administrador\n2 - cadastrar Atendente\n3 - cadastrar cliente\n4 - realizar um pedido\n5 - consultar um pedido\n6 - mostrar cofre da lanchonete\n7 - listar funcionarios\n8 - listar clientes\n0 - sair\n--------------------------\n'))
         return op
     except:
         print('Opção digitado não é um inteiro')
@@ -39,9 +39,10 @@ while True:
     elif op == 5:
         try:
             IdP = int(input('Id do pedido:'))
+            lan._pedido[IdP]._historico.mostrar_historico()
             lan.consultar_pedido(IdP)
         except:
-            print('Informe um numero inteiro')
+            print('Error')
     elif op == 6:
         cpf = str(input('CPF: '))
         lan.cofre_lanchonete(cpf)
@@ -50,6 +51,8 @@ while True:
         print(lan.add_administradores(cpf)[1])
     elif op == 7:
         lan.exibir_Funcionarios()
+    elif op == 8:
+        lan.exibir_clientes()
     elif op == 0:
         print('\nSaindo da execução...\n')
         break
