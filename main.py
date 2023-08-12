@@ -39,9 +39,10 @@ while True:
     elif op == 5:
         try:
             IdP = int(input('Id do pedido:'))
+            lan._pedido[IdP]._historico.mostrar_historico()
             lan.consultar_pedido(IdP)
         except:
-            print('Informe um numero inteiro')
+            print('Error')
     elif op == 6:
         cpf = str(input('CPF: '))
         lan.cofre_lanchonete(cpf)
